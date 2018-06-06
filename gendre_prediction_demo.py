@@ -3,6 +3,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+import numpy as np
 
 #[height, weight, shoe size]
 X = [[181, 80, 44], [177, 70, 43], [160, 60, 38], [154, 54, 37],
