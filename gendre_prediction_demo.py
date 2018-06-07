@@ -37,19 +37,25 @@ pred_RF = RF.predict(X)
 # Compare the modules
 A = [accuracy_score(Y, pred_DT), accuracy_score(Y, pred_NB), 
      accuracy_score(Y, pred_KN), accuracy_score(Y, pred_RF)]
+A = [a * 100 for a in A]
+A = [round(a, 3) for a in A]
 
 A_name = ['DecisionTreeClassifier', 'GaussianNB', 
           'KNeighborsClassifier','RandomForestClassifier']
 for i in range(4):
     if A[i] == max(A):
-       print(A_name[i] + ': ' + str(A[i]) + '*')
+       print(A_name[i] + ': {}'.format(A[i]) + '*')
     else:
-       print(A_name[i] + ': ' + str(A[i]))
- 
-print("* best module(s)")
+       print(A_name[i] + ': {}'.format(A[i]))
+
+# The best classifier from DT, NB, KN, RF
+index = np.argmax(A)
+classifiers = {0: 'DecisionTreeClassifier', 1: 'GaussianNB', 
+               2: 'KNeighborsClassifier', 3: 'RandomForestClassifier'}
+print('The best gender classifier is {}'.format(classifiers[index]))
 
 # Print result for sample
 sample = [190, 70, 43]
-prediction = RF.predict([sample])
+prediction = DT.predict([sample])
 print('The best prediction of sample ' + str(sample) + ' is ')
 print(prediction)
