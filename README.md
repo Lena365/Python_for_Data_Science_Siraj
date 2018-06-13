@@ -8,3 +8,6 @@ Project practice in Siraj's Youtube series - Python for Data Science
 [Christian Danielsen](https://github.com/chribsen)
 
 [Naresh Nagabushan](https://github.com/Naresh1318)
+
+[Arnaud Delaunay](https://github.com/arnauddelaunay/twitter_sentiment_challenge/blob/master/demo.py)
+
